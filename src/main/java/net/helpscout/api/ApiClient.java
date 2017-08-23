@@ -1793,7 +1793,7 @@ public class ApiClient {
 
     private String getEncoded(String val) {
         try {
-            return Base64.encodeBase64String(val.getBytes("UTF-8"));
+            return Base64.encodeBase64URLSafeString(val.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {
             throw new IllegalStateException("UTF-8 should always be there!", e);
         }
