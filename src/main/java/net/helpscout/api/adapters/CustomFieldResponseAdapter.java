@@ -61,7 +61,7 @@ public class CustomFieldResponseAdapter implements JsonSerializer<CustomFieldRes
 
     private static String asString(JsonObject jsonObject, String fieldName) {
         JsonElement value = jsonObject.get(fieldName);
-        if (value != null) {
+        if (value != null && !value.isJsonNull()) {
             return value.getAsString();
         } else {
             return null;
@@ -70,7 +70,7 @@ public class CustomFieldResponseAdapter implements JsonSerializer<CustomFieldRes
 
     private static Long asLong(JsonObject jsonObject, String fieldName) {
         JsonElement value = jsonObject.get(fieldName);
-        if (value != null) {
+        if (value != null && !value.isJsonNull()) {
             return value.getAsLong();
         } else {
             return null;
