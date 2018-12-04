@@ -9,8 +9,8 @@
 	<url>http://maven.apache.org</url>
 
 	<scm>
-		<connection>scm:git:https://github.com/IguanaFix/helpscout-api-java.git</connection>
-		<developerConnection>scm:git:https://github.com/IguanaFix/helpscout-api-java.git</developerConnection>
+		<connection>scm:git:https://github.com/IguanaFix/helpscout-api-java/</connection>
+		<developerConnection>scm:git:https://github.com/IguanaFix/helpscout-api-java/</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
