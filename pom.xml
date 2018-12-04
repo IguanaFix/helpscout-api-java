@@ -10,6 +10,7 @@
 
 	<scm>
 		<connection>scm:git:https://github.com/IguanaFix/helpscout-api-java/</connection>
+		<url>scm:git:https://github.com/IguanaFix/helpscout-api-java/</url>
 		<developerConnection>scm:git:https://github.com/IguanaFix/helpscout-api-java/</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
@@ -154,6 +155,22 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<uniqueVersion>true</uniqueVersion>
+				</configuration>
+				<version>2.8.1</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
