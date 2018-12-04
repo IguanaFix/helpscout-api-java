@@ -9,14 +9,31 @@
 	<url>http://maven.apache.org</url>
 
 	<scm>
-		<connection>scm:git:git@github.com:helpscout/helpscout-api-java.git</connection>
-		<developerConnection>scm:git:git@github.com:helpscout/helpscout-api-java.git</developerConnection>
+		<connection>scm:git:https://github.com/IguanaFix/helpscout-api-java.git</connection>
+		<developerConnection>scm:git:https://github.com/IguanaFix/helpscout-api-java.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<nexus-repo-host>10.0.0.7:8080</nexus-repo-host>
+		<project.scm.id>github</project.scm.id>
 	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://${nexus-repo-host}/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://${nexus-repo-host}/repository/maven-snapshots/</url>
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<dependencies>
 		<!-- Gson: Java to Json conversion -->
 		<dependency>
@@ -129,6 +146,14 @@
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
