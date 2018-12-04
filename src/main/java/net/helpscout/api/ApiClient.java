@@ -1684,6 +1684,9 @@ public class ApiClient {
     private HttpURLConnection getConnection(String apiKey, String url, String method, boolean hasRequestBody) throws Exception {
         URL aUrl = new URL(baseUrl + url);
 
+        LoggerFactory.getLogger(getClass()).info(String.format("connection apiKey [%s] url [%s] method [%s] hasRequestBody [%s]",
+                apiKey, url, method, hasRequestBody));
+
         HttpURLConnection conn = (HttpURLConnection) aUrl.openConnection();
 
         conn.setInstanceFollowRedirects(false);
